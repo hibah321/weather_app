@@ -31,6 +31,23 @@ h2 {
   color: #0054d0;
 }
 
+h3 {
+  font-family: "Rubik", sans-serif;
+  font-size: 2.5rem;
+  color: #002b6a;
+}
+
+h4 {
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #0054d0;
+}
+
+span {
+  vertical-align: baseline;
+}
+
 .container {
   background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.25));
   width: 600px;
@@ -106,6 +123,7 @@ h2 {
 
 .main {
   display: flex;
+  justify-content: center;
   box-sizing: border-box;
   justify-content: space-between;
   padding: 3rem;
@@ -113,18 +131,37 @@ h2 {
 }
 
 .main .main-left {
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  flex-basis: 45%;
   background-color: rgba(255, 255, 255, 0.25);
   box-sizing: border-box;
   border-radius: 25px;
-  padding: 2rem;
+  padding: 1.75rem;
+}
+
+.main .main-left img {
+  width: 50px;
+}
+
+.main .main-left > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .main .main-right {
+  flex-basis: 55%;
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
   gap: 1rem;
+  margin-right: 0;
+  padding-right: 0;
   margin-left: 30px;
 }
 
