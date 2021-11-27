@@ -1,18 +1,27 @@
 $font-primary: 'Rubik', sans-serif;;
 $font-secondary: 'Merriweather Sans', sans-serif;
 $font-numeric: 'Lato', sans-serif;
+$font-logo:'Shippori Antique', sans-serif;
+
+$color-primary: darken(#6aa6ff,50%);
+$color-secondary: darken(#6aa6ff,30%);
 $color-focus: rgba(255, 255, 255, 0.5);
-$color-gray: hsl(219, 81%, 72%);
+$color-gray: hsl(219, 36%, 52%);
+
 html{
     width: 100vw;
     height: 100vh;
     overflow-y: hidden;
     overflow-x: hidden;
+    background: rgb(12,108,255);
+    background: linear-gradient(90deg, rgba(12,108,255,1) 0%, rgba(0,209,255,1) 100%);
+}
+html{
+    
 }
 body{
     position: relative;
-    background: rgb(106,166,255);
-    background: linear-gradient(106deg, rgb(44, 128, 255) 0%, rgba(74,222,255,1) 100%);
+
     background-repeat: no-repeat;
     background-size: auto;
     display: flex;
@@ -23,35 +32,44 @@ body{
     height: 100vh;
 }
 //  typography
+
+.logo{
+    font-family: $font-logo;
+    color: $color-primary;
+    letter-spacing: 1ch;
+    z-index: 2;
+    margin-bottom: 10vh;
+    // margin-top: 10%;
+}
 h1{
     font-family: $font-primary;
-    font-size: 2.5rem;
-    color: darken(#6aa6ff,50%);
+    font-size: clamp(2rem, 2.2vw, 3rem);
+    color: $color-primary;
 
 }
 h2{
     font-family: $font-secondary;
     font-size: 1rem;
-    color: darken(#6aa6ff,30%);
+    color: $color-secondary;
 }
 h3{
     font-family: $font-primary;
     font-size: 2.5rem;
-    color: darken(#6aa6ff,50%);
+    color: $color-primary;
 }
 h4{
     font-family: $font-primary;
     font-size: 1rem;
     font-weight: 300;
-    color: darken(#6aa6ff,30%);
+    color: $color-secondary;
 }
 span{
     vertical-align: baseline;
 }
+
 // layout
 
 .container{
-    // background-color: rgba(255, 255, 255, 0.25);
     background: linear-gradient(
         to right bottom,
         rgba(255, 255, 255, 0.50),
@@ -82,7 +100,7 @@ span{
         border-radius: 25px;
         padding-inline: 25px;
         font-family: $font-secondary;
-        color: darken(#6aa6ff,30%);
+        color: $color-secondary;
 
     }
 
@@ -138,8 +156,8 @@ span{
         display: flex;
         flex-direction: column;
         justify-content: end;
-        flex-basis: 45%;
-        background-color: rgba(255, 255, 255, 0.25);
+        flex-basis: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
         box-sizing: border-box;
         border-radius: 25px;
         padding: 1.75rem;
@@ -157,7 +175,7 @@ span{
         }
     }
     .main-right {
-        flex-basis: 55%;
+        flex-basis: 50%;
         display: flex;
         flex-wrap: wrap;
         box-sizing: border-box;
@@ -168,15 +186,41 @@ span{
         > * {
             width: 46%;
             aspect-ratio: 1;
-            background-color: rgba(255, 255, 255, 0.25);
+            background-color: rgba(255, 255, 255, 0.5);
             box-sizing: border-box;
             border-radius: 20%;
         }
         h2{
             padding-top: 7px;
-            padding-left: 11px;
-            font-size: .875rem;
+            padding-left: 20px;
+            font-size: .8rem;
             color: $color-gray;
+            position: relative;
+            
+        }
+        h2 > div >span{
+            font-size: .95rem;
+        }
+        h2 > div{
+
+            position: absolute;
+            top: 50%;
+            // left: 50%; 
+            // transform: translate(-50%, -50%);
+            transform: translateY(-50%);
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+        .numerics{
+            font-size: clamp(1.75rem,2vw, 2rem);
+            font-family: $font-primary;
+            color: $color-primary;
+        }
+        span{
+            color: $color-primary;
         }
         svg{
             fill: $color-gray;
@@ -186,6 +230,42 @@ span{
     }
 }
 
+// mobile design
+@media all and (max-width: 700px) {
+    html{
+        overflow-y: visible;
+        overflow-x: visible;
+    }
+    .logo{
+        padding: 2rem;
+    }
+    .container{
+        width: 100%;
+        // background: transparent;
+    }
+    .main{
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem;
+        .main-right{
+            margin: 0;
+            justify-content: center;
+            width: 100%;
+            h2{
+                border-radius: 25px;
+                width: 100%;
+                aspect-ratio: 4/1;
+            }
+        }
+        .main-left{
+            margin-bottom: 2rem;
+
+        }
+    }
+    .logo{
+        // margin-top: 0%;
+    }
+}
 
 
 html, body, div, span, applet, object, iframe,

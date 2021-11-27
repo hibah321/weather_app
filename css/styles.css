@@ -3,12 +3,12 @@ html {
   height: 100vh;
   overflow-y: hidden;
   overflow-x: hidden;
+  background: #0c6cff;
+  background: linear-gradient(90deg, #0c6cff 0%, #00d1ff 100%);
 }
 
 body {
   position: relative;
-  background: #6aa6ff;
-  background: linear-gradient(106deg, #2c80ff 0%, #4adeff 100%);
   background-repeat: no-repeat;
   background-size: auto;
   display: flex;
@@ -19,9 +19,17 @@ body {
   height: 100vh;
 }
 
+.logo {
+  font-family: "Shippori Antique", sans-serif;
+  color: #002b6a;
+  letter-spacing: 1ch;
+  z-index: 2;
+  margin-bottom: 10vh;
+}
+
 h1 {
   font-family: "Rubik", sans-serif;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 2.2vw, 3rem);
   color: #002b6a;
 }
 
@@ -86,7 +94,7 @@ span {
 
 .container #search::placeholder {
   font-family: "Merriweather Sans", sans-serif;
-  color: #7ea6f1;
+  color: #5977b1;
   opacity: 1;
 }
 
@@ -134,8 +142,8 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: end;
-  flex-basis: 45%;
-  background-color: rgba(255, 255, 255, 0.25);
+  flex-basis: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
   box-sizing: border-box;
   border-radius: 25px;
   padding: 1.75rem;
@@ -155,7 +163,7 @@ span {
 }
 
 .main .main-right {
-  flex-basis: 55%;
+  flex-basis: 50%;
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
@@ -168,22 +176,79 @@ span {
 .main .main-right > * {
   width: 46%;
   aspect-ratio: 1;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.5);
   box-sizing: border-box;
   border-radius: 20%;
 }
 
 .main .main-right h2 {
   padding-top: 7px;
-  padding-left: 11px;
-  font-size: .875rem;
-  color: #7ea6f1;
+  padding-left: 20px;
+  font-size: .8rem;
+  color: #5977b1;
+  position: relative;
+}
+
+.main .main-right h2 > div > span {
+  font-size: .95rem;
+}
+
+.main .main-right h2 > div {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.main .main-right .numerics {
+  font-size: clamp(1.75rem, 2vw, 2rem);
+  font-family: "Rubik", sans-serif;
+  color: #002b6a;
+}
+
+.main .main-right span {
+  color: #002b6a;
 }
 
 .main .main-right svg {
-  fill: #7ea6f1;
+  fill: #5977b1;
   display: inline-block;
   vertical-align: middle;
+}
+
+@media all and (max-width: 700px) {
+  html {
+    overflow-y: visible;
+    overflow-x: visible;
+  }
+  .logo {
+    padding: 2rem;
+  }
+  .container {
+    width: 100%;
+  }
+  .main {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .main .main-right {
+    margin: 0;
+    justify-content: center;
+    width: 100%;
+  }
+  .main .main-right h2 {
+    border-radius: 25px;
+    width: 100%;
+    aspect-ratio: 4/1;
+  }
+  .main .main-left {
+    margin-bottom: 2rem;
+  }
 }
 
 html, body, div, span, applet, object, iframe,
