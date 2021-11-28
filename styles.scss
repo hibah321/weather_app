@@ -86,6 +86,7 @@ span{
         margin-top: 2rem;
         display: flex;
         justify-content: center;
+        padding-bottom: 2rem;
     }
 
     #search{
@@ -144,12 +145,15 @@ span{
     bottom: -30px;
     right: -30px;
 }
+.main.loading{
+    display: none;
+}
 .main{
     display: flex;
     justify-content: center;
     box-sizing: border-box;
     justify-content: space-between;
-    padding: 3rem;
+    padding:0 3rem 3rem 3rem;
     width: 100%;
 
     .main-left{
@@ -230,6 +234,7 @@ span{
     }
 }
 
+
 // mobile design
 @media all and (max-width: 700px) {
     html{
@@ -237,10 +242,10 @@ span{
         overflow-x: visible;
     }
     .logo{
-        padding: 2rem;
+        // padding: 2rem;
     }
     .container{
-        width: 100%;
+        width: 95%;
         // background: transparent;
     }
     .main{
@@ -261,9 +266,6 @@ span{
             margin-bottom: 2rem;
 
         }
-    }
-    .logo{
-        // margin-top: 0%;
     }
 }
 
