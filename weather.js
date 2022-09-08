@@ -33,15 +33,14 @@ let weather = {
         document.getElementById('feels_like').innerHTML = Math.round(feels_like)
         document.getElementById('winds').innerHTML = Math.round(speed*3600/1000);
         document.getElementById('icon').src = "http://openweathermap.org/img/wn/" + icon.replace("n", "d") + ".png";
+
+        var loading = document.querySelector(".loading");
+        loading.classList.remove("loading");
     },
     search: function(){
         var city = document.getElementById("search").value;
-        var loading = document.querySelector(".loading");
-        if (loading){
-            document.querySelector(".loading");
-        }
-        this.fetchWeather(city);
-        document.getElementById("search").value = null;
+        document.getElementById("search").value = null;      
+        this.fetchWeather(city);       
         }
     
 };
